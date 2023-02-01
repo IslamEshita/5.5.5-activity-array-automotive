@@ -46,6 +46,18 @@ class Car extends VehicleModule.Vehicle {
         return result;
     }
 
+    // Method - ScheduleService
+    ScheduleService(mileage) {    
+        if(mileage > 30000) {
+            this.scheduleService = true;
+        }
+        else
+        {
+            this.scheduleService = false;
+        }
+
+        return this.scheduleService;
+    }
 
 }
 
@@ -55,3 +67,5 @@ v2.loadPassenger(3);
 v2.loadPassenger(2);
 v2.loadPassenger(1);
 v2.start();
+console.log(v2.ScheduleService(31000));
+console.log(v2.ScheduleService(12000));
