@@ -7,7 +7,7 @@ console.log(v.make)
 
 
 class Car extends VehicleModule.Vehicle {
-    // Constructor Method
+    // Constructor function
     constructor(make, model, year, color, mileage) {
         super(make, model, year, color, mileage)
         this.maximumPassengers = 5
@@ -17,7 +17,24 @@ class Car extends VehicleModule.Vehicle {
         this.fuel = 10
         this.scheduleService = false;
     }    
+
+    // Method - loadPassenger
+    loadPassenger(num) {
+        if(this.passenger + num <= this.maximumPassengers)
+        {
+            this.passenger = this.passenger + num;
+            console.log("Loaded " + num + " passengers")
+        }
+        else
+        {
+            console.log("Cannot load " + num + " passengers. Will exceed capacity")
+        }
+    }
+
 }
 
 let v2 = new Car("Mercury", "A28", 2023, 'Red', 400);
 console.log(v2.fuel);
+v2.loadPassenger(3);
+v2.loadPassenger(2);
+v2.loadPassenger(1);
