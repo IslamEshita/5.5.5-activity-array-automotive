@@ -31,6 +31,22 @@ class Car extends VehicleModule.Vehicle {
         }
     }
 
+    // Method - start
+    start() {
+        let result = false;
+        if(this.fuel > 0) {
+            console.log("Starting...")
+            result = true;
+        }
+        else
+        {
+            result = false;
+        }
+
+        return result;
+    }
+
+
 }
 
 let v2 = new Car("Mercury", "A28", 2023, 'Red', 400);
@@ -38,3 +54,4 @@ console.log(v2.fuel);
 v2.loadPassenger(3);
 v2.loadPassenger(2);
 v2.loadPassenger(1);
+v2.start();
